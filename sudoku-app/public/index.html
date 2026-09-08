@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sudoku</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="box">
+
+  <header class="box-header">
+    <h1 class="brand">Sudoku</h1>
+    <div class="difficulty-tabs" role="tablist" aria-label="Difficulty">
+      <button class="diff-tab" data-difficulty="easy" role="tab">Easy</button>
+      <button class="diff-tab is-active" data-difficulty="medium" role="tab">Medium</button>
+      <button class="diff-tab" data-difficulty="hard" role="tab">Hard</button>
+      <button class="diff-tab" data-difficulty="expert" role="tab">Expert</button>
+    </div>
+  </header>
+
+  <div class="playfield">
+
+    <div class="board-frame">
+      <div class="board" id="board" aria-label="Sudoku grid"></div>
+      <div class="win-banner" id="winBanner" hidden>
+        <p class="win-title">Solved</p>
+        <p class="win-time" id="winTime"></p>
+      </div>
+    </div>
+
+    <aside class="panel">
+
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-label">Time</span>
+          <span class="stat-value" id="timer">00:00</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Mistakes</span>
+          <span class="stat-value" id="mistakes">0</span>
+        </div>
+      </div>
+
+      <div class="keypad" id="keypad">
+        <button class="key" data-num="1">1</button>
+        <button class="key" data-num="2">2</button>
+        <button class="key" data-num="3">3</button>
+        <button class="key" data-num="4">4</button>
+        <button class="key" data-num="5">5</button>
+        <button class="key" data-num="6">6</button>
+        <button class="key" data-num="7">7</button>
+        <button class="key" data-num="8">8</button>
+        <button class="key" data-num="9">9</button>
+        <button class="key key-erase" data-num="0" aria-label="Erase">Erase</button>
+      </div>
+
+      <div class="tool-row">
+        <button class="tool-btn" id="notesBtn" aria-pressed="false">
+          <span class="tool-icon">✎</span> Notes
+        </button>
+        <button class="tool-btn" id="undoBtn">
+          <span class="tool-icon">↺</span> Undo
+        </button>
+        <button class="tool-btn" id="hintBtn">
+          <span class="tool-icon">◆</span> Hint
+        </button>
+      </div>
+
+      <button class="new-game-btn" id="newGameBtn">New puzzle</button>
+
+    </aside>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
